@@ -55,32 +55,31 @@ npm run dev
 
 7. Project Structure
 
-app/ – Next.js App Router pages and API routes
+. app/ – Next.js App Router pages and API routes
 
-lib/ – Utility libraries (e.g., Prisma client, Cloudinary config)
+. lib/ – Utility libraries (e.g., Prisma client, Cloudinary config)
 
-public/uploads/ – Temporary storage for uploaded images
+. public/uploads/ – Temporary storage for uploaded images
 
-prisma/ – Prisma schema
+. prisma/ – Prisma schema
 
-Deployment
+8. Deployment
 
-You can deploy the app on Render
- or Vercel
+You can deploy the app on Render or Vercel
 . Make sure the environment variables are set properly.
 
-Usage
+9. Usage
 
-Select a file using the Upload button
+. Select a file using the Upload button
 
-Click Upload
+. Click Upload
 
-Add comments for each uploaded photo
+. Add comments for each uploaded photo
 
-View all photos and their comments below the upload form
+. View all photos and their comments below the upload form
 
-Links
+10. Links
 
-Source Code: GitHub Repository
+. Source Code: GitHub Repository
 
-Executable / Demo: Live App on Render
+. Executable / Demo: Live App on Render

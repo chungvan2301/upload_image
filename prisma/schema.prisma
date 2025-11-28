@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Photo {
+  id        Int       @id @default(autoincrement())
+  imageUrl  String
+  comments  Comment[]
+  createdAt DateTime  @default(now())
+}
+
+model Comment {
+  id        Int       @id @default(autoincrement())
+  photoId   Int
+  message   String
+  createdAt DateTime  @default(now())
+
+  photo     Photo     @relation(fields: [photoId], references: [id], onDelete: Cascade)
+}
+
+

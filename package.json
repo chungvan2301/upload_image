@@ -12,6 +12,7 @@
     "@prisma/adapter-pg": "^7.0.1",
     "@prisma/client": "^7.0.1",
     "antd": "^6.0.0",
+    "cloudinary": "^2.8.0",
     "dotenv": "^17.2.3",
     "next": "16.0.5",
     "pg": "^8.16.3",

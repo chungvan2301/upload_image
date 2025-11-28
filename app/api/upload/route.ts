@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile } from "fs/promises";
-import path from "path";
 import { prisma } from "../../../lib/prisma";
+import cloudinary from "../../../lib/cloudinary";
+
 
 export async function POST(req: NextRequest) {
     const formData = await req.formData();
@@ -10,15 +10,20 @@ export async function POST(req: NextRequest) {
     if (!file) return NextResponse.json({ error: "No file" }, { status: 400 });
 
     const buffer = Buffer.from(await file.arrayBuffer());
-    const uploadDir = path.join(process.cwd(), "public", "uploads");
-    const fileName = `${Date.now()}-${file.name}`;
-    const filePath = path.join(uploadDir, fileName);
 
-    await writeFile(filePath, buffer);
+    try {
+        const result = await cloudinary.uploader.upload(
+            `data:${file.type};base64,${buffer.toString("base64")}`,
+            { folder: "photos" }
+        );
 
-    const imageUrl = `/uploads/${fileName}`;
+        const photo = await prisma.photo.create({
+            data: { imageUrl: result.secure_url },
+        });
 
-    const photo = await prisma.photo.create({ data: { imageUrl } });
-
-    return NextResponse.json({ photo });
+        return NextResponse.json({ photo });
+    } catch (err) {
+        console.error(err);
+        return NextResponse.json({ error: "Upload failed" }, { status: 500 });
+    }
 }

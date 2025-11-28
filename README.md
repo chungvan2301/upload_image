@@ -12,7 +12,7 @@ This is a [Next.js](https://nextjs.org) project that allows users to **upload ph
 - Add a comment to a photo
 - Display all uploaded photos and their comments
 
-> Note: Images don't need to be persistent for this demo. Uploaded images are stored temporarily on the server or Cloudinary.
+> Note: Uploaded images are stored temporarily on the server or Cloudinary.
 
 ## Getting Started
 

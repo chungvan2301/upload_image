@@ -53,7 +53,7 @@ npm run dev
 
 6. Open http://localhost:3000 to see the app.
 
-7. Project Structure
+## Project structure
 
 - app/ – Next.js App Router pages and API routes
 
@@ -63,12 +63,12 @@ npm run dev
 
 - prisma/ – Prisma schema
 
-8. Deployment
+## Deployment
 
 - You can deploy the app on Render or Vercel
 - Make sure the environment variables are set properly.
 
-9. Usage
+## Usage
 
 - Select a file using the Upload button
 

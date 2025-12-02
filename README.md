@@ -81,5 +81,3 @@ npm run dev
 ## Link
 
 - Source Code: GitHub Repository
-
-- Executable / Demo: https://upload-image-lq6f.onrender.com/
